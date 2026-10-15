@@ -1,0 +1,19 @@
+{
+  "chainId": 43113,
+  "network": "avalanche-fuji",
+  "note": "Populated by script/Deploy.s.sol after Task #3. USDC address pre-filled from Circle docs — verify before deploying.",
+  "addresses": {
+    "usdc": "0x5425890298aed601595a70AB815c96711a31Bc65",
+    "tripFactory": null,
+    "tripImplementation": null,
+    "settlement": null,
+    "lpRegistry": null,
+    "treasury": null
+  },
+  "config": {
+    "p2pWindowSeconds": 10,
+    "lpPayWindowSeconds": 120,
+    "protocolFeeBps": 50,
+    "refundTimeoutSeconds": 3600
+  }
+}

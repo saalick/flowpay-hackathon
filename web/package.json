@@ -1,0 +1,10 @@
+{
+  "name": "@flowpay/web",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "scaffold": "echo 'Run: pnpm dlx create-next-app@latest . --ts --tailwind --app --no-src-dir --use-pnpm after contracts approved'",
+    "dev": "echo 'Web scaffold deferred until contracts are approved' && exit 1",
+    "build": "echo 'Web scaffold deferred until contracts are approved' && exit 1"
+  }
+}

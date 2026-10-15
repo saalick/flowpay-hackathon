@@ -1,0 +1,16 @@
+{
+  "name": "flowpay",
+  "private": true,
+  "version": "0.0.1",
+  "description": "AI travel companion with crypto-in, fiat-out payments on Avalanche Fuji",
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev:server": "pnpm --filter @flowpay/server dev",
+    "dev:web": "pnpm --filter @flowpay/web dev",
+    "test:contracts": "pnpm --filter @flowpay/contracts test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

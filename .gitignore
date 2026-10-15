@@ -1,0 +1,22 @@
+node_modules/
+.pnpm-store/
+dist/
+.next/
+out/
+coverage/
+.env
+.env.local
+.env.*.local
+
+# contracts
+contracts/out/
+contracts/cache/
+contracts/broadcast/
+contracts/lib/
+contracts/.foundry-cache/
+
+# editor / os
+.DS_Store
+.vscode/
+.idea/
+*.log
