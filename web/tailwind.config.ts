@@ -1,0 +1,51 @@
+import type { Config } from "tailwindcss";
+export default {
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        bg:       "#0A0B0F",
+        panel:    "#15171E",
+        panelAlt: "#1F212A",
+        edge:     "#26292F",
+        fg:       "#ECEEF2",
+        muted:    "#8A8F9C",
+        ink:      "#0A0B0F",
+        accent:   "#B6FF3B",
+        pinkNeon: "#FF4FA3",
+        cyan:     "#4ED1FF",
+        amber:    "#FFC84D",
+        coral:    "#FF5B4A",
+        cream:    "#F7F7F8",
+        creamAlt: "#15171E",
+        orange:   "#B6FF3B",
+        orangeDark:"#9FE628",
+        inkMuted: "#8A8F9C",
+        forest:   "#1F212A",
+        mint:     "#4ED1FF",
+        purple:   "#FF4FA3",
+        pink:     "#FF4FA3",
+        good:     "#B6FF3B",
+        bad:      "#FF5B4A",
+        warn:     "#FFC84D",
+        text:     "#ECEEF2",
+        line:     "#26292F",
+      },
+      fontFamily: {
+        display: ["var(--font-display)", "ui-sans-serif", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
+      boxShadow: {
+        brutal:     "4px 4px 0 0 rgba(182,255,59,0.45)",
+        brutalLg:   "6px 6px 0 0 rgba(182,255,59,0.45)",
+        brutalPink: "4px 4px 0 0 rgba(255,79,163,0.5)",
+        brutalCyan: "4px 4px 0 0 rgba(78,209,255,0.5)",
+      },
+      borderRadius: {
+        brutal: "24px",
+        pill: "999px",
+      },
+    },
+  },
+  plugins: [],
+} satisfies Config;

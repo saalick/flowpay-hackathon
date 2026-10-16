@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  background: #0A0B0F;
+  color: #ECEEF2;
+  font-family: var(--font-body), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(182,255,59,0.06) 0 2px, transparent 2px),
+    radial-gradient(circle at 80% 20%, rgba(255,79,163,0.06) 0 2px, transparent 2px),
+    radial-gradient(circle at 25% 70%, rgba(78,209,255,0.05) 0 2px, transparent 2px),
+    radial-gradient(circle at 90% 90%, rgba(236,238,242,0.04) 0 2px, transparent 2px);
+  background-size: 180px 180px, 220px 220px, 260px 260px, 200px 200px;
+}
+
+::selection { background: #B6FF3B; color: #0A0B0F; }
+
+@layer components {
+  .shell {
+    @apply w-full max-w-[460px] mx-auto min-h-screen px-5 py-6 flex flex-col gap-5;
+  }
+  .wide {
+    @apply w-full max-w-6xl mx-auto min-h-screen px-5 py-6 flex flex-col gap-5;
+  }
+
+  /* Cards — brutalist with neon offset shadow */
+  .card         { @apply bg-panel border-2 border-edge rounded-brutal p-5 text-fg shadow-brutal; }
+  .card-mint    { @apply bg-cyan text-ink border-2 border-ink rounded-brutal p-5 shadow-brutalCyan; }
+  .card-forest  { @apply bg-panelAlt text-fg border-2 border-cyan rounded-brutal p-5 shadow-brutalCyan; }
+  .card-orange  { @apply bg-accent text-ink border-2 border-ink rounded-brutal p-5 shadow-brutal; }
+  .card-purple  { @apply bg-pinkNeon text-ink border-2 border-ink rounded-brutal p-5 shadow-brutalPink; }
+  .card-pink    { @apply bg-pinkNeon text-ink border-2 border-ink rounded-brutal p-5 shadow-brutalPink; }
+
+  /* Pill buttons */
+  .pill-btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-pill border-2 border-ink font-display font-black text-ink text-base shadow-brutal transition active:translate-x-[2px] active:translate-y-[2px] active:shadow-none disabled:opacity-50 disabled:cursor-not-allowed disabled:active:translate-x-0 disabled:active:translate-y-0 disabled:active:shadow-brutal;
+  }
+  .pill-btn-primary { @apply pill-btn bg-cream; }
+  .pill-btn-orange  { @apply pill-btn bg-accent; }
+  .pill-btn-dark    { @apply pill-btn bg-panel text-fg border-accent shadow-brutal; }
+  .pill-btn-purple  { @apply pill-btn bg-pinkNeon shadow-brutalPink; }
+  .pill-btn-mint    { @apply pill-btn bg-cyan shadow-brutalCyan; }
+  .pill-btn-ghost   { @apply pill-btn bg-cream; }
+
+  .icon-btn {
+    @apply w-11 h-11 inline-flex items-center justify-center rounded-full border-2 border-ink shadow-brutal;
+  }
+
+  .keypad-key {
+    @apply bg-panel border-2 border-edge rounded-2xl shadow-brutal font-display font-black text-3xl text-fg py-4 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 bg-panel border-2 border-edge rounded-pill shadow-brutal font-display font-bold text-fg placeholder:text-muted focus:outline-none focus:border-accent;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-pill border-2 border-edge bg-panel text-fg text-xs font-display font-bold;
+  }
+  .chip-cream   { @apply chip bg-cream text-ink border-ink; }
+  .chip-mint    { @apply chip bg-cyan text-ink border-ink; }
+  .chip-orange  { @apply chip bg-accent text-ink border-ink; }
+  .chip-pink    { @apply chip bg-pinkNeon text-ink border-ink; }
+  .chip-forest  { @apply chip bg-bg text-fg border-cyan; }
+
+  .display { @apply font-display font-black tracking-tight; }
+
+  .link { @apply text-cyan underline underline-offset-2 font-display font-bold break-all; }
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  70% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-pop { animation: pop 350ms cubic-bezier(.4,1.7,.6,1) both; }
+
+@keyframes pulseRing {
+  0%   { box-shadow: 0 0 0 0 rgba(182,255,59,0.6); }
+  100% { box-shadow: 0 0 0 22px rgba(182,255,59,0); }
+}
+.pulse-ring { animation: pulseRing 1.4s infinite; }
+
+@keyframes slideUp {
+  from { transform: translateY(14px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+.animate-slide-up { animation: slideUp 320ms cubic-bezier(.22,.9,.3,1) both; }
+
+.topbar {
+  @apply hidden md:flex items-center justify-between w-full max-w-6xl mx-auto px-6 py-4;
+}
+.topbar-nav {
+  @apply flex items-center gap-1 bg-panel border-2 border-edge rounded-pill p-1 shadow-brutal;
+}
+.topbar-link {
+  @apply px-4 py-1.5 rounded-pill font-display font-bold text-sm text-fg hover:bg-edge/60;
+}
+.topbar-link-active {
+  @apply bg-accent text-ink;
+}
+
+.toast-wrap {
+  @apply fixed left-1/2 bottom-28 md:bottom-10 -translate-x-1/2 z-50 flex flex-col gap-2 w-[90%] max-w-sm pointer-events-none;
+}
+.toast {
+  @apply card-forest text-fg border-2 border-cyan shadow-brutalLg animate-slide-up pointer-events-auto p-4 flex items-start gap-3;
+}
+.toast-good { @apply card-mint text-ink; }
+.toast-bad  { @apply card-pink text-ink; }
