@@ -39,7 +39,7 @@ export default function Landing() {
         Scan any local payment prompt and pay instantly in USDC — the merchant receives local cash. Three onchain routes, auto-fallback, settled in seconds.
       </p>
       <div className="hidden md:flex flex-wrap gap-2">
-        <span className="chip bg-cream text-ink border-ink">USDC in · Baht out</span>
+        <span className="chip bg-cream text-ink border-ink">USDC in · Pesos out</span>
         <span className="chip bg-cream text-ink border-ink">P2P · Offramp · Float</span>
         <span className="chip bg-cream text-ink border-ink">~2s settle</span>
       </div>
@@ -64,13 +64,13 @@ export default function Landing() {
   const Preview = () => (
     <div className="flex flex-col gap-5 w-full max-w-md mx-auto">
       <div className="card-forest space-y-3 rotate-[-1.5deg]">
-        <span className="chip bg-forest text-cream border-cream/40">Sell Rate: ฿36.14</span>
+        <span className="chip bg-forest text-cream border-cream/40">Sell Rate: ₱56.50</span>
         <div>
           <div className="text-cream/70 text-[10px] uppercase font-bold tracking-wider">USDC balance</div>
           <div className="display text-5xl mt-1 leading-none">
             24<span className="text-cream/60 text-2xl align-top">.86</span>
           </div>
-          <div className="text-cream/70 mt-1 text-xs">≈ ฿898.44</div>
+          <div className="text-cream/70 mt-1 text-xs">≈ ₱1404.95</div>
         </div>
         <div className="grid grid-cols-2 gap-2">
           <div className="pill-btn-purple text-sm py-2 cursor-default pointer-events-none">↙ Deposit</div>
@@ -81,7 +81,7 @@ export default function Landing() {
       <div className="card-mint rotate-[1.5deg] flex items-center justify-between">
         <div>
           <div className="text-[10px] uppercase font-bold tracking-wider text-ink/70">Scan &amp; Pay</div>
-          <div className="display text-3xl mt-1 leading-none">฿180</div>
+          <div className="display text-3xl mt-1 leading-none">₱280</div>
           <div className="text-xs text-inkMuted mt-1">≈ 4.98 USDC · 0.52s to float</div>
         </div>
         <span className="text-4xl animate-pop">✓</span>

@@ -27,7 +27,7 @@ export function OrderCard({ order }: { order: Order }) {
         </div>
       </div>
       <div className="display text-2xl">
-        ฿{fiat.toFixed(2)}
+        ₱{fiat.toFixed(2)}
         <span className="text-inkMuted font-normal text-sm ml-2">from {usdc.toFixed(4)} USDC</span>
       </div>
       <div className="text-xs text-inkMuted font-mono truncate">payer {order.payer}</div>

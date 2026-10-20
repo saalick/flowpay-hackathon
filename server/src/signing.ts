@@ -37,8 +37,8 @@ export async function signQuoteForSettlement(q: Quote, settlement: Address, chai
   });
 }
 
-export function thbCurrencyBytes3(): Hex {
-  return `0x${Buffer.from("THB", "ascii").toString("hex")}` as Hex;
+export function phpCurrencyBytes3(): Hex {
+  return `0x${Buffer.from("PHP", "ascii").toString("hex")}` as Hex;
 }
 
 export function newOrderRef(): Hex {

@@ -3,11 +3,11 @@ import { privateKeyToAccount } from "viem/accounts";
 import { env } from "./env.js";
 
 export const fuji: Chain = defineChain({
-  id: 43113,
-  name: "Avalanche Fuji",
-  nativeCurrency: { name: "AVAX", symbol: "AVAX", decimals: 18 },
+  id: 84532,
+  name: "Base Sepolia",
+  nativeCurrency: { name: "Ether", symbol: "ETH", decimals: 18 },
   rpcUrls: { default: { http: [env.FUJI_RPC_URL] } },
-  blockExplorers: { default: { name: "Snowtrace", url: "https://testnet.snowtrace.io" } },
+  blockExplorers: { default: { name: "BaseScan", url: "https://sepolia.basescan.org" } },
   testnet: true,
 });
 
@@ -24,17 +24,15 @@ const _baseWalletClient = createWalletClient({
   transport: http(env.FUJI_RPC_URL),
 });
 
-// Fuji providers (publicnode in particular) reject EIP-1559 txs and refuse to
-// serve `pending`-block state for gas estimation. Force legacy mode with
-// explicit gas on every writeContract so it works on any provider.
+// Base Sepolia has proper EIP-1559 and reliable gas estimation, so no proxy
+// hacks needed. viem builds type-2 txs by default; just set a conservative
+// gas limit so single-tx funds cover the burn.
 export const walletClient = new Proxy(_baseWalletClient, {
   get(target, prop, receiver) {
     if (prop === "writeContract") {
       return (args: Parameters<typeof target.writeContract>[0]) =>
         target.writeContract({
-          type: "legacy",
-          gas: 180_000n,
-          gasPrice: 25_000_000_000n,
+          gas: 500_000n,
           ...args,
         } as Parameters<typeof target.writeContract>[0]);
     }
@@ -42,5 +40,5 @@ export const walletClient = new Proxy(_baseWalletClient, {
   },
 }) as typeof _baseWalletClient;
 
-export function explorerTx(hash: `0x${string}`) { return `https://testnet.snowtrace.io/tx/${hash}`; }
-export function explorerAddr(addr: `0x${string}`) { return `https://testnet.snowtrace.io/address/${addr}`; }
+export function explorerTx(hash: `0x${string}`) { return `https://sepolia.basescan.org/tx/${hash}`; }
+export function explorerAddr(addr: `0x${string}`) { return `https://sepolia.basescan.org/address/${addr}`; }

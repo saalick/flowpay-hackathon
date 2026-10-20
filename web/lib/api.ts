@@ -1,6 +1,6 @@
 const BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:8787";
 
-export const DEMO_MERCHANT_HANDLE = "thai-coffee-01";
+export const DEMO_MERCHANT_HANDLE = "manila-cafe-01";
 
 async function j<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE}${path}`, {
@@ -154,7 +154,7 @@ export const api = {
       body: JSON.stringify({
         payer: body.payer,
         fiatAmount: body.fiatAmount,
-        currency: "THB",
+        currency: "PHP",
         merchantHandle: body.merchantHandle ?? DEMO_MERCHANT_HANDLE,
       }),
     }),

@@ -68,7 +68,7 @@ export default function OrderPage() {
           {done ? "Settled" : refunded ? "Refunded" : "Processing"}
         </div>
         <div className="display text-5xl leading-none">
-          ฿{fiat.toFixed(2)}
+          ₱{fiat.toFixed(2)}
         </div>
         <div className={`text-sm ${done || refunded ? "text-ink/80" : "text-cream/80"}`}>
           {usdc.toFixed(4)} USDC

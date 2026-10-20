@@ -148,7 +148,7 @@ export default function PayScreen() {
       <div className="flex-1 flex flex-col items-center justify-center gap-3 py-6 text-center">
         <div className="text-sm text-muted font-display font-bold">You're paying</div>
         <div className="display text-7xl text-fg leading-none">
-          <span className="text-fg/60 mr-1">฿</span>{amountStr === "0" ? "0" : amountStr}
+          <span className="text-fg/60 mr-1">₱</span>{amountStr === "0" ? "0" : amountStr}
         </div>
         <div className="chip-forest">↕ ≈ {usdcEst.toFixed(usdcEst < 1 ? 4 : 2)} USDC</div>
         <div className="text-xs text-muted">

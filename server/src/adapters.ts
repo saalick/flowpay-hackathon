@@ -51,23 +51,23 @@ export const floatAdapter: PayoutAdapter = {
   name: "float",
   async getQuote(currency, fiatMinor) {
     const enabled = getFlag("float.enabled") === "true";
-    const balance = Number(getFlag("float.balanceTHB") ?? "0");
+    const balance = Number(getFlag("float.balancePHP") ?? "0");
     const fiatMajor = fiatMinor / 100;
     return {
       provider: "float",
-      available: enabled && currency === "THB" && balance >= fiatMajor,
+      available: enabled && currency === "PHP" && balance >= fiatMajor,
       feeBps: 0,
       etaSec: 2,
-      note: "FlowPay baht float — simulated bank account for demo.",
+      note: "FlowPay peso float — simulated bank account for demo.",
     };
   },
   async execute({ orderId, currency, fiatMinor }) {
-    const balance = Number(getFlag("float.balanceTHB") ?? "0");
+    const balance = Number(getFlag("float.balancePHP") ?? "0");
     const fiatMajor = fiatMinor / 100;
     if (balance < fiatMajor) {
       return { ok: false, provider: "float", payoutRef: "", note: "Float insufficient" };
     }
-    setFlag("float.balanceTHB", String(balance - fiatMajor));
+    setFlag("float.balancePHP", String(balance - fiatMajor));
     const ref = `FLOAT-${Date.now()}`;
     db.prepare(
       "INSERT INTO float_ledger(order_id, currency, amount, payment_ref, created_at) VALUES(?,?,?,?,?)",

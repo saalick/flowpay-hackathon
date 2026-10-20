@@ -2,16 +2,16 @@ import type { FastifyInstance } from "fastify";
 import { z } from "zod";
 import { requireDeployment } from "../deployments.js";
 import { env } from "../env.js";
-import { thbSatangToUsdc, fxInfo } from "../fx.js";
+import { phpCentToUsdc, fxInfo } from "../fx.js";
 import {
   deriveOrderId, merchantIdFromHandle, newOrderRef,
-  signQuoteForSettlement, thbCurrencyBytes3, type Quote,
+  signQuoteForSettlement, phpCurrencyBytes3, type Quote,
 } from "../signing.js";
 
 const Body = z.object({
   merchantHandle: z.string().min(1),
   fiatAmount: z.number().int().positive(),   // satang
-  currency: z.literal("THB"),
+  currency: z.literal("PHP"),
   payer: z.string().regex(/^0x[0-9a-fA-F]{40}$/),
 });
 
@@ -26,14 +26,14 @@ export async function quoteRoutes(app: FastifyInstance) {
     const dep = requireDeployment();
     const merchantId = merchantIdFromHandle(merchantHandle);
     const orderRef = newOrderRef();
-    const usdcAmount = thbSatangToUsdc(BigInt(fiatAmount));
+    const usdcAmount = phpCentToUsdc(BigInt(fiatAmount));
     const expiresAt = BigInt(Math.floor(Date.now() / 1000) + 300);
 
     const q: Quote = {
       orderRef, merchantId,
       payer: payer as `0x${string}`,
       fiatAmount: BigInt(fiatAmount),
-      currency: thbCurrencyBytes3(),
+      currency: phpCurrencyBytes3(),
       usdcAmount, expiresAt,
     };
     const sig = await signQuoteForSettlement(q, dep.settlement, dep.chainId);
@@ -52,7 +52,7 @@ export async function quoteRoutes(app: FastifyInstance) {
       display: {
         fiatMajor: fiatAmount / 100,
         usdcMajor: Number(usdcAmount) / 1_000_000,
-        fxUsdThb: env.FX_FALLBACK_USD_THB,
+        fxUsdThb: env.FX_FALLBACK_USD_PHP,
       },
     };
   });

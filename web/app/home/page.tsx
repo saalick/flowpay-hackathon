@@ -230,7 +230,7 @@ export default function Home() {
 
       <section className="card-forest space-y-4">
         <div className="flex items-center gap-2">
-          <span className="chip bg-forest text-cream border-cream/40">Sell Rate: ฿{fx ? fx.usdThb.toFixed(2) : "—"}</span>
+          <span className="chip bg-forest text-cream border-cream/40">Sell Rate: ₱{fx ? fx.usdThb.toFixed(2) : "—"}</span>
         </div>
         <div>
           <div className="text-cream/70 text-xs uppercase font-bold tracking-wider">USDC balance</div>
@@ -238,7 +238,7 @@ export default function Home() {
             {Math.floor(balanceUsd).toString()}
             <span className="text-cream/60 text-3xl align-top">.{String(Math.round((balanceUsd % 1) * 100)).padStart(2,"0")}</span>
           </div>
-          <div className="text-cream/70 mt-1 text-sm">≈ ฿{balanceLocal.toFixed(2)}</div>
+          <div className="text-cream/70 mt-1 text-sm">≈ ₱{balanceLocal.toFixed(2)}</div>
         </div>
         <div className="grid grid-cols-2 gap-3 pt-1">
           <Link href="/deposit" className="pill-btn-purple w-full">↙ Deposit</Link>
@@ -345,7 +345,7 @@ export default function Home() {
           {orders.slice(0, 3).map((o) => (
             <Link key={o.id} href={`/pay/${o.id}`} className="card flex items-center justify-between p-4">
               <div>
-                <div className="display text-lg">฿{(Number(o.fiatAmount) / 100).toFixed(2)}</div>
+                <div className="display text-lg">₱{(Number(o.fiatAmount) / 100).toFixed(2)}</div>
                 <div className="text-xs text-inkMuted">{(Number(o.usdcAmount) / 1e6).toFixed(4)} USDC · {o.status}{o.route ? ` · ${o.route}` : ""}</div>
               </div>
               <span className="icon-btn bg-cream">→</span>

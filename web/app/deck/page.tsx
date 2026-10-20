@@ -26,7 +26,7 @@ const slides: Slide[] = [
         </div>
         <div className="card space-y-2">
           <div className="display text-xl text-cyan">Merchants</div>
-          <p className="text-muted">only accept local cash — baht, rupiah, peso</p>
+          <p className="text-muted">only accept local cash — pesos, rupiah, peso</p>
         </div>
         <div className="card space-y-2">
           <div className="display text-xl text-accent">Today's fix</div>
@@ -36,7 +36,7 @@ const slides: Slide[] = [
     ),
   },
   {
-    title: <h2 className="display text-5xl md:text-6xl"><span className="text-accent">USDC in.</span> Baht out.</h2>,
+    title: <h2 className="display text-5xl md:text-6xl"><span className="text-accent">USDC in.</span> Pesos out.</h2>,
     body: (
       <p className="display text-2xl text-muted max-w-3xl text-center">
         Scan a local payment prompt. Pay in USDC. The merchant receives their local currency. Fully onchain. Fully anonymous.
@@ -50,16 +50,16 @@ const slides: Slide[] = [
         <div className="card-mint space-y-2">
           <div className="chip">01</div>
           <div className="display text-xl">P2P LP</div>
-          <p className="text-ink/80">Local liquidity provider delivers baht. Stakes USDC — slashed if they fail.</p>
+          <p className="text-ink/80">Local liquidity provider delivers pesos. Stakes USDC — slashed if they fail.</p>
         </div>
         <div className="card-purple space-y-2">
           <div className="chip">02</div>
           <div className="display text-xl">Licensed offramp</div>
-          <p className="text-ink/80">Fallback to whitelisted licensed partner. Baht in &lt;30 s.</p>
+          <p className="text-ink/80">Fallback to whitelisted licensed partner. Pesos in &lt;30 s.</p>
         </div>
         <div className="card-orange space-y-2">
           <div className="chip">03</div>
-          <div className="display text-xl">Baht float</div>
+          <div className="display text-xl">Pesos float</div>
           <p className="text-ink/80">FlowPay's own float covers it. LP slashed in parallel.</p>
         </div>
       </div>
@@ -72,7 +72,7 @@ const slides: Slide[] = [
         <div className="card flex items-center gap-4"><span className="chip-orange">1</span><span>Tourist taps <b>Scan &amp; Pay</b>, enters the bill amount.</span></div>
         <div className="card flex items-center gap-4"><span className="chip-mint">2</span><span>Server signs an EIP‑712 Quote. Tourist's smart‑wallet calls <code>pay()</code>.</span></div>
         <div className="card flex items-center gap-4"><span className="chip-pink">3</span><span>FlowSettlement emits <code>OrderCreated</code>. Chain watcher reconciles at 1 Hz.</span></div>
-        <div className="card flex items-center gap-4"><span className="chip-cream">4</span><span>Engine races the three routes, settles onchain, baht delivered.</span></div>
+        <div className="card flex items-center gap-4"><span className="chip-cream">4</span><span>Engine races the three routes, settles onchain, pesos delivered.</span></div>
       </div>
     ),
   },
