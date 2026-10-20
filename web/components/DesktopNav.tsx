@@ -27,7 +27,7 @@ export function DesktopNav() {
           className="w-10 h-10 rounded-full border-2 border-ink shadow-brutal object-cover bg-bg"
         />
         <span>FlowPay</span>
-        <span className="chip-mint ml-2 text-[10px]">Fuji · testnet</span>
+        <span className="chip-mint ml-2 text-[10px]">Base · testnet</span>
       </Link>
       <nav className="topbar-nav">
         {consumer.map((t) => (

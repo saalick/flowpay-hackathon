@@ -25,7 +25,7 @@ export default function Landing() {
 
   const Hero = () => (
     <div className="flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left gap-4 md:gap-5">
-      <span className="chip bg-cream text-ink border-ink">⚡ Live on Avalanche Fuji · testnet</span>
+      <span className="chip bg-cream text-ink border-ink">⚡ Live on Base Sepolia · testnet</span>
       <h1 className="display text-5xl sm:text-6xl md:text-6xl lg:text-7xl leading-[0.9] tracking-tight">
         SCAN.
         <br />

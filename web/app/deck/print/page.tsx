@@ -10,7 +10,7 @@ const slides: Slide[] = [
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="https://i.ibb.co/wZfcp6DG/Neon-F-Flow-Emblem.png" alt="FlowPay" className="w-24 h-24 mx-auto rounded-full border-2 border-ink shadow-brutal bg-bg" />
         <h1 className="display text-7xl md:text-8xl leading-[0.9]">FlowPay</h1>
-        <div className="chip-cream inline-flex text-sm">⚡ Live on Avalanche Fuji · 2026‑10‑16</div>
+        <div className="chip-cream inline-flex text-sm">⚡ Live on Base Sepolia · 2026‑10‑16</div>
         <p className="display text-2xl text-muted">Scan. Pay. Instantly.</p>
       </div>
     ),
@@ -62,12 +62,12 @@ const slides: Slide[] = [
     ),
   },
   {
-    title: <h2 className="display text-5xl md:text-6xl">Why Avalanche.</h2>,
+    title: <h2 className="display text-5xl md:text-6xl">Why Base.</h2>,
     body: (
       <div className="grid md:grid-cols-3 gap-5 max-w-5xl">
         <div className="card space-y-2"><div className="display text-xl text-accent">Fast finality</div><p className="text-muted">Sub‑second confirmation keeps settle windows tight.</p></div>
         <div className="card space-y-2"><div className="display text-xl text-cyan">Cheap gas</div><p className="text-muted">Full onboard + payment under ¢1 on testnet. Mainnet sub‑cent.</p></div>
-        <div className="card space-y-2"><div className="display text-xl text-pinkNeon">Native USDC</div><p className="text-muted">Circle USDC available on Avalanche today. MockUSDC for demo.</p></div>
+        <div className="card space-y-2"><div className="display text-xl text-pinkNeon">Native USDC</div><p className="text-muted">Circle USDC available on Base today. MockUSDC for demo.</p></div>
       </div>
     ),
   },

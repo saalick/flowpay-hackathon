@@ -198,7 +198,7 @@ export default function Home() {
         <TopBar title={<span>FlowPay</span>} />
         <div className="card space-y-3 text-center">
           <h2 className="display text-xl">Connect your wallet</h2>
-          <p className="text-sm text-inkMuted">Avalanche Fuji testnet — no real money.</p>
+          <p className="text-sm text-inkMuted">Avalanche Base Sepolia testnet — no real money.</p>
           <Link href="/" className="pill-btn-orange w-full">Go to login →</Link>
         </div>
       </Shell>
@@ -223,7 +223,7 @@ export default function Home() {
 
       {needsChain && (
         <div className="card-orange text-ink flex items-center justify-between">
-          <span className="text-sm font-bold">Wrong network — switch to Fuji.</span>
+          <span className="text-sm font-bold">Wrong network — switch to Base Sepolia.</span>
           <button className="pill-btn-dark text-sm py-2 px-4" onClick={() => switchChain({ chainId: CHAIN_ID })}>Switch</button>
         </div>
       )}
@@ -250,7 +250,7 @@ export default function Home() {
         <section className="card space-y-3">
           <div className="display text-lg">Getting you ready…</div>
           <p className="text-sm text-muted">
-            Deploying your anonymous FlowPay account on Fuji and dropping 10 MockUSDC in for the demo. Gas is on us.
+            Deploying your anonymous FlowPay account on Base Sepolia and dropping 10 MockUSDC in for the demo. Gas is on us.
           </p>
           {busy && <div className="text-xs text-cyan font-mono">{busy}</div>}
           <button
